@@ -26,7 +26,7 @@ class UpdateRoadSignRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'type' => ['required', 'in:warning,regulatory,road_markings,information,road_signs,traffic_signals,hand_signals,other'],
             'description' => ['required', 'string', 'max:1000'],
-            'image_path' => ['required', 'string', 'max:255'],
+            'image_path' => ['required', 'string', 'max:10000000'],
             'is_active' => ['sometimes', 'boolean'],
         ];
     }
