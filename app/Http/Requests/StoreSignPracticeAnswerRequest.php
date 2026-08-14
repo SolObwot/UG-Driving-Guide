@@ -12,7 +12,7 @@ class StoreSignPracticeAnswerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,9 @@ class StoreSignPracticeAnswerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'road_sign_id' => ['required', 'integer', 'exists:road_signs,id'],
+            'selected_road_sign_id' => ['nullable', 'integer', 'exists:road_signs,id'],
+            'time_taken_seconds' => ['nullable', 'integer', 'min:0', 'max:1800'],
         ];
     }
 }

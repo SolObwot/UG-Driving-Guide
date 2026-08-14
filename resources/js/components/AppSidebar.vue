@@ -1,21 +1,14 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, CircleHelp, LayoutGrid, Road } from '@lucide/vue';
+import { BookOpen, CircleHelp, LayoutGrid, Road, BookOpenCheck, History } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-} from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, } from '@/components/ui/sidebar';
+import { dashboard,} from '@/routes';
 import { index as roadSigns } from '@/routes/road-signs';
+import { index as practice, history as practiceHistory } from '@/routes/practice';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -28,7 +21,17 @@ const mainNavItems: NavItem[] = [
         title: 'Road Signs',
         href: roadSigns(),
         icon: Road,
-    }
+    },
+    {
+        title: 'Practice',
+        href: practice(),
+        icon: BookOpenCheck,
+    },
+    {
+        title: 'Practice History',
+        href: practiceHistory(),
+        icon: History,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
